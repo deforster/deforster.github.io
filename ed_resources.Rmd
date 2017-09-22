@@ -1,0 +1,5 @@
+---
+title: "Educational Resources"
+---
+
+I have created a few resources for guiding basic regression and multilevel modeling analyses in R. These were in part created as a personal learning experience but were ultimately designed to help my students. Feel free to use these resources as you wish and please send any feedback if you found these helpful or have suggestions for improvement.

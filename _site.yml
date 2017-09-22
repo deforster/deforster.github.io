@@ -1,0 +1,11 @@
+name: "dannys-website"
+output_dir: "."
+navbar:
+  title: "Daniel E. Forster"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Publications"
+      href: publications.html
+    - text: "Educational Resources"
+      href: ed_resources.html

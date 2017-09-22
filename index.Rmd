@@ -1,0 +1,5 @@
+---
+title: "Daniel E. Forster"
+---
+
+I am a Psychology Ph.D. candidate with a Concentration in Quantitative Psychology at the University of Miami. My research is centered on using evolutionary, cognitive, and social psychological approaches to understanding how emotions function to build and maintain social relationships, with a focus on gratitude and forgiveness. I specialize in applying advanced statistical techniques (e.g., structural equation modeling, multilevel modeling, Bayesian analysis) to my research questions and recently have begun to conduct original research on understanding the properties of Bayesian IRT models. I am also committed to advancing open science practices
