@@ -2,10 +2,14 @@ name: "dannys-website"
 output_dir: "."
 navbar:
   title: "Daniel E. Forster"
-  left:
+  right:
     - text: "Home"
       href: index.html
     - text: "Publications"
       href: publications.html
     - text: "Educational Resources"
       href: ed_resources.html
+output:
+  html_document:
+    theme: sandstone
+    css: style.css
