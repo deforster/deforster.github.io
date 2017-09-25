@@ -183,25 +183,13 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
+  <a href="Forster_CV_2017.pdf">CV</a>
+</li>
+<li>
   <a href="publications.html">Publications</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Educational Resources
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="ed_resources.html">Overview</a>
-    </li>
-    <li>
-      <a href="Regression_in_R.html">Regression in R</a>
-    </li>
-    <li>
-      <a href="MLMplotting.html">MLM Plotting in R</a>
-    </li>
-  </ul>
+<li>
+  <a href="ed_resources.html">Educational Resources</a>
 </li>
       </ul>
     </div><!--/.nav-collapse -->
@@ -217,7 +205,27 @@ $(document).ready(function () {
 </div>
 
 
-<p>I have created a few resources for guiding basic regression and multilevel modeling analyses in R. These were in part created as a personal learning experience but were ultimately designed to help my students. Feel free to use these resources as you wish and please send any feedback if you found these helpful or have suggestions for improvement.</p>
+<p>I have created a few resources to help my students conduct basic regression and multilevel modeling analyses in R. TFeel free to use these resources as you wish and please send any feedback if you found these helpful or have suggestions for improvement.</p>
+<hr />
+<div id="r-functions" class="section level2">
+<h2>R functions</h2>
+<p><a href="nonLinearPlot.R" class="uri">nonLinearPlot.R</a></p>
+<ul>
+<li>An R function for plotting non-linear (piecewise or quadratic) relationships for multiple regression (lm) and multilevel modeling (lmer) objects in R. See the R tutorial files below for some examples.</li>
+</ul>
+<hr />
+</div>
+<div id="r-tutorials" class="section level2">
+<h2>R tutorials</h2>
+<p><a href="Regression_in_R.html">Regression in R</a></p>
+<ul>
+<li>This was designed for the University of Miami’s PSY 632 graduate course on Multivariate Statistics and Regression. It covers diagnostics, linear and curvilinear regression, moderation, mediation, and basic path analysis.</li>
+</ul>
+<p><a href="MLMplotting.html">Plotting Multilevel Models in R</a></p>
+<ul>
+<li>This was designed for the University of Miami’s PSY 634 graduate course on Multilevel Modeling. It covers diagnostic, linear, and piecewise plots.</li>
+</ul>
+</div>
 
 
 
@@ -242,7 +250,7 @@ $(document).ready(function () {
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

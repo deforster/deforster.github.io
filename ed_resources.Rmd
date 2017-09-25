@@ -2,4 +2,24 @@
 title: "Educational Resources"
 ---
 
-I have created a few resources for guiding basic regression and multilevel modeling analyses in R. These were in part created as a personal learning experience but were ultimately designed to help my students. Feel free to use these resources as you wish and please send any feedback if you found these helpful or have suggestions for improvement.
+I have created a few resources to help my students conduct basic regression and multilevel modeling analyses in R. TFeel free to use these resources as you wish and please send any feedback if you found these helpful or have suggestions for improvement.
+
+***
+
+##R functions
+
+[nonLinearPlot.R](nonLinearPlot.R)
+
++ An R function for plotting non-linear (piecewise or quadratic) relationships for multiple regression (lm) and multilevel modeling (lmer) objects in R. See the R tutorial files below for some examples.
+
+***
+
+##R tutorials
+
+[Regression in R](Regression_in_R.html)
+
++ This was designed for the University of Miami's PSY 632 graduate course on Multivariate Statistics and Regression. It covers diagnostics, linear and curvilinear regression, moderation, mediation, and basic path analysis.
+
+[Plotting Multilevel Models in R](MLMplotting.html)
+
++ This was designed for the University of Miami's PSY 634 graduate course on Multilevel Modeling. It covers diagnostic, linear, and piecewise plots.

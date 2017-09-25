@@ -5,16 +5,12 @@ navbar:
   right:
     - text: "Home"
       href: index.html
+    - text: "CV"
+      href: Forster_CV_2017.pdf
     - text: "Publications"
       href: publications.html
     - text: "Educational Resources"
-      menu:
-        - text: "Overview"
-          href: ed_resources.html
-        - text: "Regression in R"
-          href: Regression_in_R.html
-        - text: "MLM Plotting in R"
-          href: MLMplotting.html
+      href: ed_resources.html
 output:
   html_document:
     theme: sandstone
