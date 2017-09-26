@@ -2,14 +2,16 @@
 title: "Publications"
 ---
 
-***
-[Google Scholar](https://scholar.google.com/citations?user=8rf72h8AAAAJ&hl=en)
 
-[Research Gate](https://www.google.com/url?q=https%3A%2F%2Fwww.researchgate.net%2Fprofile%2FDaniel_Forster&sa=D&sntz=1&usg=AFQjCNGZHyAXw6hNKW0ND-HvvABnbhwR3g)
+---
 
-***
+<font size=3>[Google Scholar](https://scholar.google.com/citations?user=8rf72h8AAAAJ&hl=en)
 
-Smith, A., Pedersen, E. J., **Forster, D. E.**, McCullough, M. E., & Lieberman, D. (in press). Cooperation: The roles of interpersonal value and gratitude. Evolution and Human Behavior. [**[PDF]**](http://www.google.com/url?q=http%3A%2F%2Fac.els-cdn.com%2FS1090513817300818%2F1-s2.0-S1090513817300818-main.pdf%3F_tid%3Db0c5ced8-9e28-11e7-8c29-00000aacb35e%26acdnat%3D1505928506_923535e51917fc314dc386a001522884&sa=D&sntz=1&usg=AFQjCNEVb23dICjJNtcb2g9gwUX1UL3QeA)
+[Research Gate](https://www.google.com/url?q=https%3A%2F%2Fwww.researchgate.net%2Fprofile%2FDaniel_Forster&sa=D&sntz=1&usg=AFQjCNGZHyAXw6hNKW0ND-HvvABnbhwR3g)</font>
+
+---
+
+<font size=3>Smith, A., Pedersen, E. J., **Forster, D. E.**, McCullough, M. E., & Lieberman, D. (in press). Cooperation: The roles of interpersonal value and gratitude. Evolution and Human Behavior. [**[PDF]**](http://www.google.com/url?q=http%3A%2F%2Fac.els-cdn.com%2FS1090513817300818%2F1-s2.0-S1090513817300818-main.pdf%3F_tid%3Db0c5ced8-9e28-11e7-8c29-00000aacb35e%26acdnat%3D1505928506_923535e51917fc314dc386a001522884&sa=D&sntz=1&usg=AFQjCNEVb23dICjJNtcb2g9gwUX1UL3QeA)
 
 McAuliffe, W. H. B., **Forster, D. E.**, Phillipe, J., & McCullough, M. E. (in press). Digital altruists: Resolving key questions about the empathy-altruism hypothesis in an internet sample. Emotion. [**[PDF]**](https://drive.google.com/open?id=0B4dBnjOhmzO8d1RCdjg3Z0lTdTQ)
 
@@ -24,3 +26,5 @@ Carter, E. C., Kofler, L. K., **Forster, D. E.**, & McCullough, M. E. (2015). A 
 Carver, C. S., Johnson, S. L., McCullough, M. E., **Forster, D. E.**, & Joorman, J. (2014). Adult personality correlates of childhood adversity. Frontiers in Psychology. 5:1357. [**[PDF]**](http://www.google.com/url?q=http%3A%2F%2Fjournal.frontiersin.org%2Farticle%2F10.3389%2Ffpsyg.2014.01357%2Ffull&sa=D&sntz=1&usg=AFQjCNFLimSdtB5BbQgsacrpvtFo0iLpMQ)
 
 Pedersen, E. J., **Forster, D. E.**, & McCullough, M. E. (2014). Life history, code of honor, and emotional responses to inequality in an economic game. Emotion, 14(5), 920-929. [**[PDF]**](http://www.google.com/url?q=http%3A%2F%2F129.171.236.12%2Ffaculty%2Fmmccullough%2FPapers%2FPedersen%2520et%2520al%2520%2520Emotion%2520%28in%2520press%29.pdf&sa=D&sntz=1&usg=AFQjCNHtxBf34oGyUJp_1jbgEKPk6b0wRg)
+
+</font>
