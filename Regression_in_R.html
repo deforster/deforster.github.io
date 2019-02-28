@@ -125,7 +125,10 @@ $(document).ready(function () {
 
 <div id="using-this-document" class="section level2">
 <h2>Using This Document</h2>
-<p>This was set up to provide you with an easy and reliable resource for conducting regression models. This can, and should, be an evolving document; as you notice errors, inconsistencies, or the absence of a tool that you think is very important, please let Maria, your TA, or Danny Forster (<a href="mailto:forster.danny@gmail.com">forster.danny@gmail.com</a>) know. We also want to make it as easy to understand as possible, so if you find anything unclear or can suggest a better way to present information, or even acccomplish a task, then please contribute!</p>
+<p>This was set up to provide you with an easy and reliable resource for conducting regression models. This can, and should, be an evolving document; as you notice errors, inconsistencies, or the absence of a tool that you think is very important, please let your instructor, your TA, or Danny Forster (forster[dot]danny[at]gmail.com) know. We also want to make it as easy to understand as possible, so if you find anything unclear or can suggest a better way to present information, or even acccomplish a task, then please contribute!
+<br />
+<br />
+Also, note that R packages are constantly being updated, which can influence how functions are called from various packages. This means that much of the syntax presented here will inevitably go out of date. Unless contacted, I will not be keeping this document up to date.</p>
 </div>
 <div id="setting-up-your-r-script" class="section level2">
 <h2>Setting up your R script</h2>
@@ -191,41 +194,41 @@ dissData &lt;- read.spss(&quot;dissertationData.sav&quot;, to.data.frame = T, us
 ## 5   7.632563  3.1022  -3.6719918
 ## 6  67.872784  0.1022  -0.7341714</code></pre>
 <pre class="r"><code>summary(modData) # This shows basic descriptives of your data</code></pre>
-<pre><code>##        id           age           yearsexe        enduranc    
-##  Min.   :  1   Min.   :20.00   Min.   : 0.00   Min.   : 0.00  
-##  1st Qu.: 63   1st Qu.:43.00   1st Qu.: 7.00   1st Qu.:19.00  
-##  Median :124   Median :48.00   Median :11.00   Median :27.00  
-##  Mean   :125   Mean   :49.18   Mean   :10.67   Mean   :26.53  
-##  3rd Qu.:187   3rd Qu.:56.00   3rd Qu.:14.00   3rd Qu.:33.00  
-##  Max.   :250   Max.   :82.00   Max.   :26.00   Max.   :55.00  
-##       cage            cyearsex            inter              hiexer       
-##  Min.   :-29.184   Min.   :-10.6735   Min.   :-131.570   Min.   :-15.448  
-##  1st Qu.: -6.184   1st Qu.: -3.6735   1st Qu.:  -7.264   1st Qu.: -8.448  
-##  Median : -1.184   Median :  0.3265   Median :   4.511   Median : -4.448  
-##  Mean   :  0.000   Mean   :  0.0000   Mean   :  13.587   Mean   : -4.775  
-##  3rd Qu.:  6.816   3rd Qu.:  3.3265   3rd Qu.:  32.103   3rd Qu.: -1.448  
-##  Max.   : 32.816   Max.   : 15.3265   Max.   : 175.062   Max.   : 10.552  
-##     interhi             loexer          lointer        
-##  Min.   :-165.252   Min.   :-5.898   Min.   :-175.428  
-##  1st Qu.: -20.792   1st Qu.: 1.102   1st Qu.: -16.244  
-##  Median :   7.507   Median : 5.102   Median :   2.002  
-##  Mean   :  13.587   Mean   : 4.776   Mean   :  13.587  
-##  3rd Qu.:  36.403   3rd Qu.: 8.102   3rd Qu.:  37.453  
+<pre><code>##        id           age           yearsexe        enduranc
+##  Min.   :  1   Min.   :20.00   Min.   : 0.00   Min.   : 0.00
+##  1st Qu.: 63   1st Qu.:43.00   1st Qu.: 7.00   1st Qu.:19.00
+##  Median :124   Median :48.00   Median :11.00   Median :27.00
+##  Mean   :125   Mean   :49.18   Mean   :10.67   Mean   :26.53
+##  3rd Qu.:187   3rd Qu.:56.00   3rd Qu.:14.00   3rd Qu.:33.00
+##  Max.   :250   Max.   :82.00   Max.   :26.00   Max.   :55.00
+##       cage            cyearsex            inter              hiexer
+##  Min.   :-29.184   Min.   :-10.6735   Min.   :-131.570   Min.   :-15.448
+##  1st Qu.: -6.184   1st Qu.: -3.6735   1st Qu.:  -7.264   1st Qu.: -8.448
+##  Median : -1.184   Median :  0.3265   Median :   4.511   Median : -4.448
+##  Mean   :  0.000   Mean   :  0.0000   Mean   :  13.587   Mean   : -4.775
+##  3rd Qu.:  6.816   3rd Qu.:  3.3265   3rd Qu.:  32.103   3rd Qu.: -1.448
+##  Max.   : 32.816   Max.   : 15.3265   Max.   : 175.062   Max.   : 10.552
+##     interhi             loexer          lointer
+##  Min.   :-165.252   Min.   :-5.898   Min.   :-175.428
+##  1st Qu.: -20.792   1st Qu.: 1.102   1st Qu.: -16.244
+##  Median :   7.507   Median : 5.102   Median :   2.002
+##  Mean   :  13.587   Mean   : 4.776   Mean   :  13.587
+##  3rd Qu.:  36.403   3rd Qu.: 8.102   3rd Qu.:  37.453
 ##  Max.   : 275.733   Max.   :20.102   Max.   : 298.701</code></pre>
 <pre class="r"><code>stargazer(modData[, 2:10], type = &quot;text&quot;) # modData[, 2:10] takes only the 2nd-10th rows (i.e., excludes id)</code></pre>
-<pre><code>## 
+<pre><code>##
 ## ==============================================
-## Statistic  N   Mean  St. Dev.   Min      Max  
+## Statistic  N   Mean  St. Dev.   Min      Max
 ## ----------------------------------------------
-## age       245 49.184  10.107     20      82   
-## yearsexe  245 10.673  4.775      0       26   
-## enduranc  245 26.531  10.819     0       55   
-## cage      245 0.000   10.107  -29.184  32.816 
-## cyearsex  245 0.000   4.775   -10.673  15.327 
+## age       245 49.184  10.107     20      82
+## yearsexe  245 10.673  4.775      0       26
+## enduranc  245 26.531  10.819     0       55
+## cage      245 0.000   10.107  -29.184  32.816
+## cyearsex  245 0.000   4.775   -10.673  15.327
 ## inter     245 13.587  46.012  -131.570 175.062
-## hiexer    245 -4.775  4.775   -15.448  10.552 
+## hiexer    245 -4.775  4.775   -15.448  10.552
 ## interhi   245 13.587  67.131  -165.252 275.733
-## loexer    245 4.776   4.775    -5.898  20.102 
+## loexer    245 4.776   4.775    -5.898  20.102
 ## ----------------------------------------------</code></pre>
 </div>
 <div id="regression-analysis" class="section level2">
@@ -236,10 +239,10 @@ dissData &lt;- read.spss(&quot;dissertationData.sav&quot;, to.data.frame = T, us
 # check multi-collinearity
 
 vif(m1)</code></pre>
-<pre><code>## cyearsex     cage 
+<pre><code>## cyearsex     cage
 ## 1.086837 1.086837</code></pre>
 <pre class="r"><code>sqrt(vif(m1)) &gt; 2</code></pre>
-<pre><code>## cyearsex     cage 
+<pre><code>## cyearsex     cage
 ##    FALSE    FALSE</code></pre>
 <pre class="r"><code># check non-independence of errors
 
@@ -252,34 +255,34 @@ durbinWatsonTest(m1)</code></pre>
 global1 &lt;- gvlma(m1)
 
 summary(global1)</code></pre>
-<pre><code>## 
+<pre><code>##
 ## Call:
 ## lm(formula = enduranc ~ cyearsex + cage, data = modData)
-## 
+##
 ## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -21.7994  -6.9040   0.5701   5.6326  27.2279 
-## 
+##      Min       1Q   Median       3Q      Max
+## -21.7994  -6.9040   0.5701   5.6326  27.2279
+##
 ## Coefficients:
-##             Estimate Std. Error t value Pr(&gt;|t|)    
+##             Estimate Std. Error t value Pr(&gt;|t|)
 ## (Intercept)  26.5306     0.6337  41.865  &lt; 2e-16 ***
 ## cyearsex      0.9163     0.1386   6.610 2.44e-10 ***
 ## cage         -0.2571     0.0655  -3.925 0.000113 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
+##
 ## Residual standard error: 9.919 on 242 degrees of freedom
-## Multiple R-squared:  0.1663, Adjusted R-squared:  0.1594 
+## Multiple R-squared:  0.1663, Adjusted R-squared:  0.1594
 ## F-statistic: 24.14 on 2 and 242 DF,  p-value: 2.754e-10
-## 
-## 
+##
+##
 ## ASSESSMENT OF THE LINEAR MODEL ASSUMPTIONS
 ## USING THE GLOBAL TEST ON 4 DEGREES-OF-FREEDOM:
-## Level of Significance =  0.05 
-## 
+## Level of Significance =  0.05
+##
 ## Call:
-##  gvlma(x = m1) 
-## 
+##  gvlma(x = m1)
+##
 ##                     Value p-value                Decision
 ## Global Stat        2.7023  0.6088 Assumptions acceptable.
 ## Skewness           0.7820  0.3765 Assumptions acceptable.
@@ -287,24 +290,24 @@ summary(global1)</code></pre>
 ## Link Function      0.3835  0.5357 Assumptions acceptable.
 ## Heteroscedasticity 0.7863  0.3752 Assumptions acceptable.</code></pre>
 <pre class="r"><code>summary(m1)</code></pre>
-<pre><code>## 
+<pre><code>##
 ## Call:
 ## lm(formula = enduranc ~ cyearsex + cage, data = modData)
-## 
+##
 ## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -21.7994  -6.9040   0.5701   5.6326  27.2279 
-## 
+##      Min       1Q   Median       3Q      Max
+## -21.7994  -6.9040   0.5701   5.6326  27.2279
+##
 ## Coefficients:
-##             Estimate Std. Error t value Pr(&gt;|t|)    
+##             Estimate Std. Error t value Pr(&gt;|t|)
 ## (Intercept)  26.5306     0.6337  41.865  &lt; 2e-16 ***
 ## cyearsex      0.9163     0.1386   6.610 2.44e-10 ***
 ## cage         -0.2571     0.0655  -3.925 0.000113 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
+##
 ## Residual standard error: 9.919 on 242 degrees of freedom
-## Multiple R-squared:  0.1663, Adjusted R-squared:  0.1594 
+## Multiple R-squared:  0.1663, Adjusted R-squared:  0.1594
 ## F-statistic: 24.14 on 2 and 242 DF,  p-value: 2.754e-10</code></pre>
 <pre class="r"><code># get confidence intervals
 
@@ -317,79 +320,79 @@ confint(m1)</code></pre>
 <pre class="r"><code>m2.var &lt;- lm(enduranc ~ cyearsex + cage + inter, data = modData)
 
 summary(m2.var)</code></pre>
-<pre><code>## 
+<pre><code>##
 ## Call:
 ## lm(formula = enduranc ~ cyearsex + cage + inter, data = modData)
-## 
+##
 ## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -21.165  -6.939   0.269   6.300  21.299 
-## 
+##     Min      1Q  Median      3Q     Max
+## -21.165  -6.939   0.269   6.300  21.299
+##
 ## Coefficients:
-##             Estimate Std. Error t value Pr(&gt;|t|)    
+##             Estimate Std. Error t value Pr(&gt;|t|)
 ## (Intercept) 25.88872    0.64662  40.037  &lt; 2e-16 ***
 ## cyearsex     0.97272    0.13653   7.124 1.20e-11 ***
 ## cage        -0.26169    0.06406  -4.085 6.01e-05 ***
 ## inter        0.04724    0.01359   3.476 0.000604 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
+##
 ## Residual standard error: 9.7 on 241 degrees of freedom
-## Multiple R-squared:  0.2061, Adjusted R-squared:  0.1962 
+## Multiple R-squared:  0.2061, Adjusted R-squared:  0.1962
 ## F-statistic: 20.86 on 3 and 241 DF,  p-value: 4.764e-12</code></pre>
 <p>…or you can simply create the interaction within the model.</p>
 <pre class="r"><code>m2.star &lt;- lm(enduranc ~ cyearsex * cage, data = modData) # The asterisk creates the main effects and interaction between two variables
 
 summary(m2.star)</code></pre>
-<pre><code>## 
+<pre><code>##
 ## Call:
 ## lm(formula = enduranc ~ cyearsex * cage, data = modData)
-## 
+##
 ## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -21.165  -6.939   0.269   6.300  21.299 
-## 
+##     Min      1Q  Median      3Q     Max
+## -21.165  -6.939   0.269   6.300  21.299
+##
 ## Coefficients:
-##               Estimate Std. Error t value Pr(&gt;|t|)    
+##               Estimate Std. Error t value Pr(&gt;|t|)
 ## (Intercept)   25.88872    0.64662  40.037  &lt; 2e-16 ***
 ## cyearsex       0.97272    0.13653   7.124 1.20e-11 ***
 ## cage          -0.26169    0.06406  -4.085 6.01e-05 ***
 ## cyearsex:cage  0.04724    0.01359   3.476 0.000604 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
+##
 ## Residual standard error: 9.7 on 241 degrees of freedom
-## Multiple R-squared:  0.2061, Adjusted R-squared:  0.1962 
+## Multiple R-squared:  0.2061, Adjusted R-squared:  0.1962
 ## F-statistic: 20.86 on 3 and 241 DF,  p-value: 4.764e-12</code></pre>
 <pre class="r"><code>m2.colon &lt;- lm(enduranc ~ cyearsex + cage + cyearsex:cage, data = modData) # The colon isolates the interaction term (i.e., the colon will not evaluate main effects, so they must be entered separately)
 
 summary(m2.colon)</code></pre>
-<pre><code>## 
+<pre><code>##
 ## Call:
 ## lm(formula = enduranc ~ cyearsex + cage + cyearsex:cage, data = modData)
-## 
+##
 ## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -21.165  -6.939   0.269   6.300  21.299 
-## 
+##     Min      1Q  Median      3Q     Max
+## -21.165  -6.939   0.269   6.300  21.299
+##
 ## Coefficients:
-##               Estimate Std. Error t value Pr(&gt;|t|)    
+##               Estimate Std. Error t value Pr(&gt;|t|)
 ## (Intercept)   25.88872    0.64662  40.037  &lt; 2e-16 ***
 ## cyearsex       0.97272    0.13653   7.124 1.20e-11 ***
 ## cage          -0.26169    0.06406  -4.085 6.01e-05 ***
 ## cyearsex:cage  0.04724    0.01359   3.476 0.000604 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
+##
 ## Residual standard error: 9.7 on 241 degrees of freedom
-## Multiple R-squared:  0.2061, Adjusted R-squared:  0.1962 
+## Multiple R-squared:  0.2061, Adjusted R-squared:  0.1962
 ## F-statistic: 20.86 on 3 and 241 DF,  p-value: 4.764e-12</code></pre>
 <p>Now let’s compare models:</p>
 <pre class="r"><code>modelCompare(m1, m2.star) # this uses the lmSupport package</code></pre>
-<pre><code>## SSE (Compact) =  23810.33 
-## SSE (Augmented) =  22673.79 
-## Delta R-Squared =  0.03979367 
-## Partial Eta-Squared (PRE) =  0.04773338 
+<pre><code>## SSE (Compact) =  23810.33
+## SSE (Augmented) =  22673.79
+## Delta R-Squared =  0.03979367
+## Partial Eta-Squared (PRE) =  0.04773338
 ## F(1,241) = 12.08038, p = 0.0006041869</code></pre>
 <p>This moderation is significant! We can plot this very easily in R.</p>
 <pre class="r"><code>sjp.int(m2.star, type = &quot;eff&quot;, mdrt.values = &quot;meansd&quot;)</code></pre>
@@ -530,24 +533,24 @@ head(poly)</code></pre>
 <pre class="r"><code>polyreg &lt;- lm(gain ~ ctime + ctime2, data = poly)
 
 summary(polyreg)</code></pre>
-<pre><code>## 
+<pre><code>##
 ## Call:
 ## lm(formula = gain ~ ctime + ctime2, data = poly)
-## 
+##
 ## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -5.0071 -1.7214  0.2429  1.6357  5.9571 
-## 
+##     Min      1Q  Median      3Q     Max
+## -5.0071 -1.7214  0.2429  1.6357  5.9571
+##
 ## Coefficients:
-##             Estimate Std. Error t value Pr(&gt;|t|)    
+##             Estimate Std. Error t value Pr(&gt;|t|)
 ## (Intercept)  12.0429     1.0098  11.926 1.11e-09 ***
-## ctime         1.3750     0.4582   3.001 0.008040 ** 
+## ctime         1.3750     0.4582   3.001 0.008040 **
 ## ctime2       -1.9464     0.3872  -5.026 0.000104 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
+##
 ## Residual standard error: 2.898 on 17 degrees of freedom
-## Multiple R-squared:  0.6684, Adjusted R-squared:  0.6294 
+## Multiple R-squared:  0.6684, Adjusted R-squared:  0.6294
 ## F-statistic: 17.13 on 2 and 17 DF,  p-value: 8.415e-05</code></pre>
 <p>There is a significant quadratic effect. We can interpret this more easily by plotting it.</p>
 <p>What happens if we try to plot it using sjPlots?</p>
@@ -602,32 +605,32 @@ logitData$dummyAge == logitData$dummy</code></pre>
 <pre class="r"><code>logMod1 &lt;- glm(chd ~ dummy, data = logitData, family = binomial(link = &quot;logit&quot;))
 
 summary(logMod1)</code></pre>
-<pre><code>## 
+<pre><code>##
 ## Call:
-## glm(formula = chd ~ dummy, family = binomial(link = &quot;logit&quot;), 
+## glm(formula = chd ~ dummy, family = binomial(link = &quot;logit&quot;),
 ##     data = logitData)
-## 
-## Deviance Residuals: 
-##     Min       1Q   Median       3Q      Max  
-## -1.6481  -0.7787  -0.7787   0.7710   1.6378  
-## 
+##
+## Deviance Residuals:
+##     Min       1Q   Median       3Q      Max
+## -1.6481  -0.7787  -0.7787   0.7710   1.6378
+##
 ## Coefficients:
-##             Estimate Std. Error z value Pr(&gt;|z|)    
+##             Estimate Std. Error z value Pr(&gt;|z|)
 ## (Intercept)  -1.0380     0.2822  -3.678 0.000235 ***
 ## dummy         2.0989     0.4788   4.384 1.17e-05 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
+##
 ## (Dispersion parameter for binomial family taken to be 1)
-## 
+##
 ##     Null deviance: 136.66  on 99  degrees of freedom
 ## Residual deviance: 114.61  on 98  degrees of freedom
 ## AIC: 118.61
-## 
+##
 ## Number of Fisher Scoring iterations: 4</code></pre>
 <pre class="r"><code># Exponentiate coefficients to get Odds and Odds Ratios
 exp(logMod1$coefficients)</code></pre>
-<pre><code>## (Intercept)       dummy 
+<pre><code>## (Intercept)       dummy
 ##   0.3541667   8.1568627</code></pre>
 <pre class="r"><code># Obtain and exponentiate confidence intervals to get Odds and Odds Ratios
 confint(logMod1)</code></pre>
@@ -643,42 +646,42 @@ confint(logMod1)</code></pre>
 <pre class="r"><code># Obtain psued-R squared values from the BaylorEdPsych package
 
 PseudoR2(logMod1)</code></pre>
-<pre><code>##         McFadden     Adj.McFadden        Cox.Snell       Nagelkerke 
-##        0.1613743        0.1174706        0.1979135        0.2656432 
-## McKelvey.Zavoina           Effron            Count        Adj.Count 
-##        0.2334979        0.2150322        0.7400000        0.3953488 
-##              AIC    Corrected.AIC 
+<pre><code>##         McFadden     Adj.McFadden        Cox.Snell       Nagelkerke
+##        0.1613743        0.1174706        0.1979135        0.2656432
+## McKelvey.Zavoina           Effron            Count        Adj.Count
+##        0.2334979        0.2150322        0.7400000        0.3953488
+##              AIC    Corrected.AIC
 ##      118.6090963      118.7328076</code></pre>
 <p>For the second analysis, we want to predict chd with mean-centered age.</p>
 <pre class="r"><code>logMod2 &lt;- glm(chd ~ cage, data = logitData, family = binomial(link = &quot;logit&quot;))
 
 summary(logMod2)</code></pre>
-<pre><code>## 
+<pre><code>##
 ## Call:
-## glm(formula = chd ~ cage, family = binomial(link = &quot;logit&quot;), 
+## glm(formula = chd ~ cage, family = binomial(link = &quot;logit&quot;),
 ##     data = logitData)
-## 
-## Deviance Residuals: 
-##     Min       1Q   Median       3Q      Max  
-## -1.9718  -0.8456  -0.4576   0.8253   2.2859  
-## 
+##
+## Deviance Residuals:
+##     Min       1Q   Median       3Q      Max
+## -1.9718  -0.8456  -0.4576   0.8253   2.2859
+##
 ## Coefficients:
-##             Estimate Std. Error z value Pr(&gt;|z|)    
-## (Intercept) -0.38677    0.23972  -1.613    0.107    
+##             Estimate Std. Error z value Pr(&gt;|z|)
+## (Intercept) -0.38677    0.23972  -1.613    0.107
 ## cage         0.11092    0.02406   4.610 4.02e-06 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
+##
 ## (Dispersion parameter for binomial family taken to be 1)
-## 
+##
 ##     Null deviance: 136.66  on 99  degrees of freedom
 ## Residual deviance: 107.35  on 98  degrees of freedom
 ## AIC: 111.35
-## 
+##
 ## Number of Fisher Scoring iterations: 4</code></pre>
 <pre class="r"><code># Exponentiate coefficients to get Odds and Odds Ratios
 exp(logMod2$coefficients)</code></pre>
-<pre><code>## (Intercept)        cage 
+<pre><code>## (Intercept)        cage
 ##   0.6792452   1.1173068</code></pre>
 <pre class="r"><code># Obtain and exponentiate confidence intervals to get Odds and Odds Ratios
 confint(logMod2)</code></pre>
@@ -694,11 +697,11 @@ confint(logMod2)</code></pre>
 <pre class="r"><code># Obtain psued-R squared values from the BaylorEdPsych package
 
 PseudoR2(logMod2)</code></pre>
-<pre><code>##         McFadden     Adj.McFadden        Cox.Snell       Nagelkerke 
-##        0.2144684        0.1705648        0.2540516        0.3409928 
-## McKelvey.Zavoina           Effron            Count        Adj.Count 
-##        0.3371659        0.2725374        0.7400000        0.3953488 
-##              AIC    Corrected.AIC 
+<pre><code>##         McFadden     Adj.McFadden        Cox.Snell       Nagelkerke
+##        0.2144684        0.1705648        0.2540516        0.3409928
+## McKelvey.Zavoina           Effron            Count        Adj.Count
+##        0.3371659        0.2725374        0.7400000        0.3953488
+##              AIC    Corrected.AIC
 ##      111.3530927      111.4768040</code></pre>
 </div>
 <div id="plotting-with-logistic-regression" class="section level3">
@@ -831,36 +834,36 @@ fit &lt;- sem(mediate, data = ptsd, se = &quot;bootstrap&quot;)
 
 summary(fit, ci = T)</code></pre>
 <pre><code>## lavaan (0.5-23.1097) converged normally after  25 iterations
-## 
+##
 ##                                                   Used       Total
 ##   Number of observations                           151         152
-## 
+##
 ##   Estimator                                         ML
 ##   Minimum Function Test Statistic                0.096
 ##   Degrees of freedom                                 1
 ##   P-value (Chi-square)                           0.757
-## 
+##
 ## Parameter Estimates:
-## 
+##
 ##   Information                                 Observed
 ##   Standard Errors                            Bootstrap
 ##   Number of requested bootstrap draws             1000
 ##   Number of successful bootstrap draws            1000
-## 
+##
 ## Regressions:
 ##                    Estimate  Std.Err  z-value  P(&gt;|z|) ci.lower ci.upper
-##   BLOODPRE ~                                                            
+##   BLOODPRE ~
 ##     WARSTR     (c)    1.088    0.552    1.971    0.049   -0.092    2.123
 ##     PTSD       (b)    0.421    0.132    3.192    0.001    0.142    0.685
-##   PTSD ~                                                                
+##   PTSD ~
 ##     WARSTR     (a)    0.822    0.288    2.856    0.004    0.265    1.427
 ##     ANXTOT            0.709    0.109    6.503    0.000    0.487    0.920
-## 
+##
 ## Variances:
 ##                    Estimate  Std.Err  z-value  P(&gt;|z|) ci.lower ci.upper
 ##    .BLOODPRE        172.194   24.518    7.023    0.000  126.288  221.636
 ##    .PTSD             61.697    8.404    7.341    0.000   45.693   78.169
-## 
+##
 ## Defined Parameters:
 ##                    Estimate  Std.Err  z-value  P(&gt;|z|) ci.lower ci.upper
 ##     ab                0.346    0.159    2.179    0.029    0.082    0.677

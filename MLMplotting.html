@@ -132,15 +132,16 @@ sjp.setTheme(base = theme_bw())</code></pre>
 <h2>Use This Guide! (especially for lmer objects)</h2>
 <p>This is a guide that is designed to be your resource for making plots from multilevel models. You can use this as a starting point for visualizing your plots in a reliable way. If you want to learn more about touching up your plots to make them more visually appealing (for a publication, poster, or presentation), then you should read more on using ggplot2. You can find a cheat sheet here: <a href="https://www.rstudio.com/wp-content/uploads/2016/11/ggplot2-cheatsheet-2.1.pdf" class="uri">https://www.rstudio.com/wp-content/uploads/2016/11/ggplot2-cheatsheet-2.1.pdf</a></p>
 <p>Feel free to provide feedback so that this can serve as a useful and reliable guide for years to come. I have included what I think is sufficient annotation; however, if you believe anything is unclear, or you can think of a way to make the descriptions/explanations better, please help!</p>
+<p>Also, note that R packages are constantly being updated, which can influence how functions are called from various packages. This means that much of the syntax presented here will inevitably go out of date. Unless contacted, I will not be keeping this document up to date.</p>
 </div>
 <div id="data-background" class="section level2">
 <h2>Data Background</h2>
 <p>This guide will use the data set from probset4, since it has a diverse set of properties (e.g., non-linearity) that we would like to capture.</p>
 <pre class="r"><code>probset4 &lt;- read.csv(&quot;probset4.csv&quot;, header = T, fileEncoding = &quot;UTF-8-BOM&quot;)
 
-probset4 &lt;- probset4 %&gt;% 
-  group_by(ID) %&gt;% 
-  mutate(avgARS = mean(ARS)) %&gt;% 
+probset4 &lt;- probset4 %&gt;%
+  group_by(ID) %&gt;%
+  mutate(avgARS = mean(ARS)) %&gt;%
   mutate(cwcARS = ARS - avgARS)
 
 probset4$gmcARS &lt;- probset4$avgARS - mean(probset4$avgARS)
@@ -179,60 +180,60 @@ base.plot + geom_line()</code></pre>
 summary(model)</code></pre>
 <pre><code>## Linear mixed model fit by REML t-tests use Satterthwaite approximations
 ##   to degrees of freedom [lmerMod]
-## Formula: INT ~ ageP1 + ageP2 + cwcARS + gmcARS + SEX + ageP1:cwcARS +  
-##     ageP2:cwcARS + ageP1:gmcARS + ageP1:SEX + (1 + ageP1 + ageP2 |  
+## Formula: INT ~ ageP1 + ageP2 + cwcARS + gmcARS + SEX + ageP1:cwcARS +
+##     ageP2:cwcARS + ageP1:gmcARS + ageP1:SEX + (1 + ageP1 + ageP2 |
 ##     ID)
 ##    Data: probset4
-## 
+##
 ## REML criterion at convergence: 4873.5
-## 
-## Scaled residuals: 
-##     Min      1Q  Median      3Q     Max 
-## -3.5106 -0.6248  0.0447  0.6314  3.7541 
-## 
+##
+## Scaled residuals:
+##     Min      1Q  Median      3Q     Max
+## -3.5106 -0.6248  0.0447  0.6314  3.7541
+##
 ## Random effects:
-##  Groups   Name        Variance Std.Dev. Corr       
-##  ID       (Intercept) 0.581136 0.76232             
-##           ageP1       0.009524 0.09759  -0.77      
+##  Groups   Name        Variance Std.Dev. Corr
+##  ID       (Intercept) 0.581136 0.76232
+##           ageP1       0.009524 0.09759  -0.77
 ##           ageP2       0.003802 0.06166   0.51  0.17
-##  Residual             2.089877 1.44564             
+##  Residual             2.089877 1.44564
 ## Number of obs: 1308, groups:  ID, 300
-## 
+##
 ## Fixed effects:
-##                Estimate Std. Error         df t value Pr(&gt;|t|)    
+##                Estimate Std. Error         df t value Pr(&gt;|t|)
 ## (Intercept)     4.30951    0.20162   99.90000  21.374  &lt; 2e-16 ***
 ## ageP1           1.22346    0.03292  159.00000  37.168  &lt; 2e-16 ***
-## ageP2          -0.03682    0.04084  230.40000  -0.902   0.3682    
-## cwcARS          0.41094    0.20693 1051.80000   1.986   0.0473 *  
+## ageP2          -0.03682    0.04084  230.40000  -0.902   0.3682
+## cwcARS          0.41094    0.20693 1051.80000   1.986   0.0473 *
 ## gmcARS         -1.10451    0.17411  129.80000  -6.344 3.43e-09 ***
 ## SEX             3.74013    0.27910  115.80000  13.401  &lt; 2e-16 ***
-## ageP1:cwcARS   -0.02208    0.03577 1085.00000  -0.617   0.5372    
+## ageP1:cwcARS   -0.02208    0.03577 1085.00000  -0.617   0.5372
 ## ageP2:cwcARS    0.56143    0.05677 1032.60000   9.890  &lt; 2e-16 ***
 ## ageP1:gmcARS    0.20853    0.02876  212.50000   7.252 7.55e-12 ***
 ## ageP1:SEX      -0.46331    0.04429  177.70000 -10.462  &lt; 2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
+##
 ## Correlation of Fixed Effects:
 ##             (Intr) ageP1  ageP2  cwcARS gmcARS SEX    agP1:cARS aP2:AR
-## ageP1       -0.921                                                    
-## ageP2        0.164 -0.303                                             
-## cwcARS      -0.026  0.023 -0.003                                      
-## gmcARS      -0.093  0.080 -0.007 -0.038                               
-## SEX         -0.697  0.622  0.018  0.032  0.034                        
-## agP1:cwcARS  0.020 -0.017  0.003 -0.926  0.031 -0.023                 
-## agP2:cwcARS -0.001 -0.001  0.005  0.322 -0.009  0.001 -0.523          
+## ageP1       -0.921
+## ageP2        0.164 -0.303
+## cwcARS      -0.026  0.023 -0.003
+## gmcARS      -0.093  0.080 -0.007 -0.038
+## SEX         -0.697  0.622  0.018  0.032  0.034
+## agP1:cwcARS  0.020 -0.017  0.003 -0.926  0.031 -0.023
+## agP2:cwcARS -0.001 -0.001  0.005  0.322 -0.009  0.001 -0.523
 ## agP1:gmcARS  0.076 -0.062 -0.015  0.034 -0.920 -0.027 -0.027     0.010
 ## ageP1:SEX    0.640 -0.664 -0.030 -0.027 -0.028 -0.927  0.018     0.002
 ##             agP1:gARS
-## ageP1                
-## ageP2                
-## cwcARS               
-## gmcARS               
-## SEX                  
-## agP1:cwcARS          
-## agP2:cwcARS          
-## agP1:gmcARS          
+## ageP1
+## ageP2
+## cwcARS
+## gmcARS
+## SEX
+## agP1:cwcARS
+## agP2:cwcARS
+## agP1:gmcARS
 ## ageP1:SEX    0.030</code></pre>
 <pre class="r"><code># Creating level 1 standardized residuals
 
