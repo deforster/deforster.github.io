@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -30,10 +30,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -88,6 +90,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -209,14 +214,18 @@ $(document).ready(function () {
 <p><font size=3><a href="https://scholar.google.com/citations?user=8rf72h8AAAAJ&amp;hl=en">Google Scholar</a></p>
 <p><a href="https://www.google.com/url?q=https%3A%2F%2Fwww.researchgate.net%2Fprofile%2FDaniel_Forster&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGZHyAXw6hNKW0ND-HvvABnbhwR3g">Research Gate</a></font></p>
 <hr />
-<p><font size=3>Smith, A., Pedersen, E. J., <strong>Forster, D. E.</strong>, McCullough, M. E., &amp; Lieberman, D. (in press). Cooperation: The roles of interpersonal value and gratitude. Evolution and Human Behavior. <a href="http://www.google.com/url?q=http%3A%2F%2Fac.els-cdn.com%2FS1090513817300818%2F1-s2.0-S1090513817300818-main.pdf%3F_tid%3Db0c5ced8-9e28-11e7-8c29-00000aacb35e%26acdnat%3D1505928506_923535e51917fc314dc386a001522884&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEVb23dICjJNtcb2g9gwUX1UL3QeA"><strong>[PDF]</strong></a></p>
-<p>McAuliffe, W. H. B., <strong>Forster, D. E.</strong>, Phillipe, J., &amp; McCullough, M. E. (in press). Digital altruists: Resolving key questions about the empathy-altruism hypothesis in an internet sample. Emotion. <a href="https://drive.google.com/open?id=0B4dBnjOhmzO8d1RCdjg3Z0lTdTQ"><strong>[PDF]</strong></a></p>
-<p><strong>Forster, D. E.</strong>, Pedersen, E. J., Smith, A., McCullough, M. E. &amp; Lieberman, D. (2017). Benefit valuation predicts gratitude. Evolution and Human Behavior, 38(1), 18-26. <a href="https://ac.els-cdn.com/S1090513816301131/1-s2.0-S1090513816301131-main.pdf?_tid=2979afd8-9fd8-11e7-bcb8-00000aab0f6c&amp;acdnat=1506113821_eab8211eeb2358ef5720ad7976320c89"><strong>[PDF]</strong></a></p>
-<p>Krimsky, M., <strong>Forster, D. E.</strong>, Llabre, M. M., &amp; Jha, A. P. (2017). The influence of time on task on mind wandering and visual working memory. Cognition 169, 84-90. <a href="http://www.google.com/url?q=http%3A%2F%2Fac.els-cdn.com%2FS001002771730224X%2F1-s2.0-S001002771730224X-main.pdf%3F_tid%3Dacd20e26-9e29-11e7-94ef-00000aab0f27%26acdnat%3D1505928929_0574df546cfd8ddd410398eee621ebad&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHQi7fbhv_H3RJ_B_FlGahJc9eaeA"><strong>[PDF]</strong></a></p>
-<p>Spencer-Rodgers, J., Major, B., <strong>Forster, D. E.</strong>, &amp; Peng, K. (2016). The power of affirming group values: Group affirmation buffers the self-esteem of women exposed to blatant sexism. Self and Identity, 15(4), 413-431. <a href="http://www.google.com/url?q=http%3A%2F%2Fwww.tandfonline.com%2Fdoi%2Fpdf%2F10.1080%2F15298868.2016.1145593%3FneedAccess%3Dtrue%26&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNG80KFgkz_Fh71FvoTeyS_DkZLLMA"><strong>[PDF]</strong></a></p>
-<p>Carter, E. C., Kofler, L. K., <strong>Forster, D. E.</strong>, &amp; McCullough, M. E. (2015). A series of meta-analytic tests of the depletion effect: Self-control does not seem to rely on a limited resource. Journal of Experimental Psychology: General, 144(4), 796-815. <a href="http://www.google.com/url?q=http%3A%2F%2Fciteseerx.ist.psu.edu%2Fviewdoc%2Fdownload%3Fdoi%3D10.1.1.719.8430%26rep%3Drep1%26type%3Dpdf&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFR2Z9KGp_TaKKX7IdKgb9k9NCIFA"><strong>[PDF]</strong></a></p>
-<p>Carver, C. S., Johnson, S. L., McCullough, M. E., <strong>Forster, D. E.</strong>, &amp; Joorman, J. (2014). Adult personality correlates of childhood adversity. Frontiers in Psychology. 5:1357. <a href="http://www.google.com/url?q=http%3A%2F%2Fjournal.frontiersin.org%2Farticle%2F10.3389%2Ffpsyg.2014.01357%2Ffull&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFLimSdtB5BbQgsacrpvtFo0iLpMQ"><strong>[PDF]</strong></a></p>
-<p>Pedersen, E. J., <strong>Forster, D. E.</strong>, &amp; McCullough, M. E. (2014). Life history, code of honor, and emotional responses to inequality in an economic game. Emotion, 14(5), 920-929. <a href="http://www.google.com/url?q=http%3A%2F%2F129.171.236.12%2Ffaculty%2Fmmccullough%2FPapers%2FPedersen%2520et%2520al%2520%2520Emotion%2520%28in%2520press%29.pdf&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHtxBf34oGyUJp_1jbgEKPk6b0wRg"><strong>[PDF]</strong></a></p>
+<p><font size=3></p>
+<p>McAuliffe, W. H. B., <strong>Forster, D. E.</strong>, Pedersen, E. J., &amp; McCullough, M. E. (2018). Does cooperation in the laboratory reflect the operation of a broad trait? European Journal of Personality. <a href="https://doi.org/10.1002/per.2180" class="uri">https://doi.org/10.1002/per.2180</a></p>
+<p>McAuliffe, W. H. B., <strong>Forster, D. E.</strong>, Pedersen, E. J., &amp; McCullough, M. E. (2018). Experience with anonymous interactions reduces intuitive cooperation. Nature Human Behaviour, 2, 909-914.<a href="https://doi.org/10.1038/s41562-018-0454-9" class="uri">https://doi.org/10.1038/s41562-018-0454-9</a></p>
+<p>Bainter, S. A. &amp; <strong>Forster, D. E.</strong> (2018). The impact of moderate priors for Bayesian estimation and testing of item factor analysis models when maximum likelihood is unsuitable. Structural Equation Modeling: A Multidisciplinary Journal. 1-14.</p>
+<p>McAuliffe, W. H. B., <strong>Forster, D. E.</strong>, Philippe, J., &amp; McCullough, M. E. (2018). Digital altruists: Resolving key questions about the empathy-altruism hypothesis in an Internet sample. Emotion, 18(4), 493-506.10.1037/emo0000375 [<strong>PDF</strong>] (<a href="http://local.psy.miami.edu/ehblab/Digital%20Altruism%20(in%20press).pdf">http://local.psy.miami.edu/ehblab/Digital%20Altruism%20(in%20press).pdf</a>)</p>
+<p>Smith, A., Pedersen, E. J., <strong>Forster, D. E.</strong>, McCullough, M. E., &amp; Lieberman, D. (2017). Cooperation: The roles of interpersonal value and gratitude. Evolution and Human Behavior, 38(6), 695-703. 10.1016/j.evolhumbehav.2017.08.003 [<strong>PDF</strong>] (<a href="http://local.psy.miami.edu/ehblab/Cooperation.pdf" class="uri">http://local.psy.miami.edu/ehblab/Cooperation.pdf</a>)</p>
+<p><strong>Forster, D. E.</strong>, Pedersen, E. J., Smith, A., McCullough, M. E. &amp; Lieberman, D. (2017). Benefit valuation predicts gratitude. Evolution and Human Behavior, 38(1), 18-26.10.1016/j.evolhumbehav.2016.06.003 [<strong>PDF</strong>] (<a href="http://local.psy.miami.edu/ehblab/BenefitValuationPredictsGratitude.pdf" class="uri">http://local.psy.miami.edu/ehblab/BenefitValuationPredictsGratitude.pdf</a>)</p>
+<p>Krimsky, M., <strong>Forster, D. E.</strong>, Llabre, M. M., &amp; Jha, A. P. (2017). The influence of time on task on mind wandering and visual working memory. Cognition 169, 84-90. <a href="http://dx.doi.org/10.1016/j.cognition.2017.08.006" class="uri">http://dx.doi.org/10.1016/j.cognition.2017.08.006</a></p>
+<p>Spencer-Rodgers, J., Major, B., <strong>Forster, D. E.</strong>, &amp; Peng, K. (2016). The power of affirming group values: Group affirmation buffers the self-esteem of women exposed to blatant sexism. Self and Identity, 15(4), 413-431. <a href="http://dx.doi.org/10.1080/15298868.2016.1145593" class="uri">http://dx.doi.org/10.1080/15298868.2016.1145593</a></p>
+<p>Carter, E. C., Kofler, L. K., <strong>Forster, D. E.</strong>, &amp; McCullough, M. E. (2015). A series of meta-analytic tests of the depletion effect: Self-control does not seem to rely on a limited resource. Journal of Experimental Psychology: General, 144(4), 796-815. <a href="http://dx.doi.org/10.1037/xge0000083" class="uri">http://dx.doi.org/10.1037/xge0000083</a> [<strong>PDF</strong>] (<a href="http://local.psy.miami.edu/ehblab/EgoDepletionMetaAnalysis.pdf" class="uri">http://local.psy.miami.edu/ehblab/EgoDepletionMetaAnalysis.pdf</a>)</p>
+<p>Carver, C. S., Johnson, S. L., McCullough, M. E., <strong>Forster, D. E.</strong>, &amp; Joorman, J. (2014). Adult personality correlates of childhood adversity. Frontiers in Psychology. 5:1357. <a href="http://dx.doi.org/10.3389/fpsyg.2014.01357" class="uri">http://dx.doi.org/10.3389/fpsyg.2014.01357</a> [<strong>PDF</strong>] (<a href="http://local.psy.miami.edu/ehblab/AdultPersonalityChildhoodAdversity.pdf" class="uri">http://local.psy.miami.edu/ehblab/AdultPersonalityChildhoodAdversity.pdf</a>)</p>
+<p>Pedersen, E. J., <strong>Forster, D. E.</strong>, &amp; McCullough, M. E. (2014). Life history, code of honor, and emotional responses to inequality in an economic game. Emotion, 14(5), 920-929. <a href="http://dx.doi.org/10.1037/a0036752" class="uri">http://dx.doi.org/10.1037/a0036752</a> [<strong>PDF</strong>] (<a href="http://local.psy.miami.edu/ehblab/CodeOfHonor.pdf" class="uri">http://local.psy.miami.edu/ehblab/CodeOfHonor.pdf</a>)</p>
 <p></font></p>
 
 

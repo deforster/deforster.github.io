@@ -2,7 +2,7 @@
 title: "Daniel E. Forster"
 ---
 
-<img style="float: left" src="bosphorus.jpg">
+<img style="float: left" src="df_photo.jpg">
 
 <p><font size=5><b>I am a Psychology Ph.D. candidate with a Concentration in Quantitative Psychology at the University of Miami.</b></font>
 <br />
