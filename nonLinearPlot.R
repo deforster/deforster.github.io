@@ -1,10 +1,28 @@
 # Made by Danny Forster (forster.danny@gmail.com)
-# Last Updated May 23, 2023
+# Last Updated October 7, 2023
+
+## How to use:
+
+# nonLinearPlot(model = c(lm, glm, lmer, glmer), data = data_name, type = c("quad", "piece"), x1 = "x1", x2 = "x2", mod = "moderator", scale = 0, piece.sep = NULL, binary = FALSE, ylab = NULL, xlab = NULL, main = NULL, legend = NULL)
+
+# model: a model of class 'lm', 'glm', 'lmer', or 'glmer'
+# data: name of a data.frame that contains the data used in the model
+# type: whether your model includes a quadratic ("quad") or piecewise predictor ("piece")
+# x1: For quadratic, name of the linear variable. For piecewise, name of the first piece.
+# x2: For quadratic, name of the squared variable. For piecewise, name of the second piece.
+# mod: name of the moderator variable
+# scale: By how much to adjust the x-axis to undo mean- or min-centering
+# piece.sep: The knot value that ties x1 to x2 in a piecewise regression.
+# binary: whether the moderator is a binary variable.
+# ylab: label for the y-axis
+# xlab: label for the x-axis
+# main: main title
+# legend: legend title
 
 nonLinearPlot <- function(model, data, type, x1, x2, mod = NULL, scale = 0, piece.sep = NULL, binary = FALSE, ylab = NULL, xlab = NULL, main = NULL, legend = NULL) {
   data <- as.data.frame(data)
   if (!is.null(summary(model)$isLmer)) {
-    if (summary(model)$isLmer == TRUE) {
+    if (class(model)[1] == "lmerMod" | class(model)[1] == "glmerMod") {
       # Get positions of lmer coefficients in fixef()
       b1PosFE <- which(attributes(fixef(model))$name == x1)
       b2PosFE <- which(attributes(fixef(model))$name == x2)
@@ -22,7 +40,7 @@ nonLinearPlot <- function(model, data, type, x1, x2, mod = NULL, scale = 0, piec
     }
   else {
     if (!is.null(attributes(model)$class)) {
-      if (attributes(model)$class == "lm") {
+      if ("lm" %in% attributes(model)$class) {
         # Get positions of lm coefficients in model$coefficients
         b1PosFE <- which(attributes(model$coefficients)$names == x1)
         b2PosFE <- which(attributes(model$coefficients)$names == x2)
@@ -85,7 +103,7 @@ nonLinearPlot <- function(model, data, type, x1, x2, mod = NULL, scale = 0, piec
     # Get fixed values of the moderator
     if (is.null(mod)) {
       modLow <- 0
-      modHigh <- 0
+      modHigh <- 1
     }
     else {
       modLow <- min(modRAW, na.rm = T)
