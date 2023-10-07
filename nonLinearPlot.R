@@ -1,3 +1,6 @@
+# Made by Danny Forster (forster.danny@gmail.com)
+# Last Updated May 23, 2023
+
 nonLinearPlot <- function(model, data, type, x1, x2, mod = NULL, scale = 0, piece.sep = NULL, binary = FALSE, ylab = NULL, xlab = NULL, main = NULL, legend = NULL) {
   data <- as.data.frame(data)
   if (!is.null(summary(model)$isLmer)) {
@@ -13,24 +16,9 @@ nonLinearPlot <- function(model, data, type, x1, x2, mod = NULL, scale = 0, piec
       int <- fixef(model)[1]
       b1 <- fixef(model)[b1PosFE]
       b2 <- fixef(model)[b2PosFE]
-      if (length(b1mPosFE) == 0) {
-        m <- 0
-      }
-      else {
-        m <- fixef(model)[modPosFE]
-      }
-      if (length(b1mPosFE) == 0) {
-        b1m <- 0
-      }
-      else {
-        b1m <- fixef(model)[b1mPosFE]
-      }
-      if (length(b2mPosFE) == 0) {
-        b2m <- 0
-      }
-      else {
-        b2m <- fixef(model)[b2mPosFE]
-      }
+      m <- ifelse(length(b1mPosFE) == 0 & length(b2mPosFE) == 0, 0, fixef(model)[modPosFE])
+      b1m <- ifelse(length(b1mPosFE) == 0, 0, fixef(model)[b1mPosFE])
+      b2m <- ifelse(length(b2mPosFE) == 0, 0, fixef(model)[b2mPosFE])
     }
   else {
     if (!is.null(attributes(model)$class)) {
@@ -81,14 +69,14 @@ nonLinearPlot <- function(model, data, type, x1, x2, mod = NULL, scale = 0, piec
   }
   if (type == "quad") {
     # For raw plotting
-    xNew <- seq(min(b1RAW), max(b1RAW), length = 1000)
+    xNew <- seq(min(b1RAW, na.rm = T), max(b1RAW, na.rm = T), length = 1000)
     # For quadratic
     x1New <- xNew
     x2New <- xNew^2
   }
   if (type == "piece") {
     # For raw plotting
-    xNew <- seq(min(b1RAW), max(b1RAW + b2RAW), length = 1000)
+    xNew <- seq(min(b1RAW, na.rm = T), max((b1RAW + b2RAW), na.rm = T), length = 1000)
     # For piecewise
     x1New <- ifelse(xNew <= piece.sep, xNew, piece.sep)
     x2New <- ifelse(xNew > piece.sep, xNew - piece.sep, 0)
@@ -100,8 +88,8 @@ nonLinearPlot <- function(model, data, type, x1, x2, mod = NULL, scale = 0, piec
       modHigh <- 0
     }
     else {
-      modLow <- min(modRAW)
-      modHigh <- max(modRAW)
+      modLow <- min(modRAW, na.rm = T)
+      modHigh <- max(modRAW, na.rm = T)
     }
     # Make prediction lines
     pred.low <- int + b1*x1New + b2*x2New + m*modLow + b1m*x1New*modLow + b2m*x2New*modLow
@@ -127,9 +115,9 @@ nonLinearPlot <- function(model, data, type, x1, x2, mod = NULL, scale = 0, piec
       modHigh <- 0
     }
     else {
-      modLow <- mean(modRAW) - sd(modRAW)
-      modAvg <- mean(modRAW)
-      modHigh <- mean(modRAW) + sd(modRAW)
+      modLow <- mean(modRAW, na.rm = T) - sd(modRAW, na.rm = T)
+      modAvg <- mean(modRAW, na.rm = T)
+      modHigh <- mean(modRAW, na.rm = T) + sd(modRAW, na.rm = T)
     }
     # Make prediction lines
     pred.low <- int + b1*x1New + b2*x2New + m*modLow + b1m*x1New*modLow + b2m*x2New*modLow
